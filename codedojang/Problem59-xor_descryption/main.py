@@ -37,4 +37,3 @@ encrypted_words=encrypted_text.split(',')
 print(get_candidated_alpha(encrypted_words))
 
 
-
