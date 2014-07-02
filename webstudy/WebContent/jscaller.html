@@ -1,0 +1,39 @@
+<html>
+<body>
+<script>
+function helper()
+{
+   var head= document.getElementsByTagName('head')[0];
+   var script= document.createElement('script');
+   script.type= 'text/javascript';
+   script.src= 'jscallee.js';
+   head.appendChild(script);
+}
+
+
+function FindProxyForURL(url, host) {
+//	if (isInNet(host, "172.21.0.0", "255.255.0.0")) return "DIRECT";
+	helper();
+
+	alert("Call")
+	if ( scoreProxy == undefined)
+		alert("Null")
+	else
+		message = scoreProxy(url, host);
+	alert("Done")
+	document.write("<h2>" + message + "</h2>");
+	document.write("<h2>DONE</h2>");
+}
+
+</script>
+
+<h1>TEST2</h1>
+<script>
+FindProxyForURL("1","2");
+</script>
+
+
+
+</body>
+</html>
+
