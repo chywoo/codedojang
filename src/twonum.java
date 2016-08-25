@@ -4,18 +4,22 @@ public class twonum {
 
 	public static void main(String[] args)
 	{
-		int a = 5;
-		int b = 3;
+		int a = 3;
+		int b = 4;
 		int n = 10;
 		TreeSet<Long> setNum = new TreeSet<Long>();
 		
-		for (int i = 1; i <= n; i++)
+		int max = Math.max(a,  b);
+		int min = Math.min(a,b);
+		
+		for (int i = 0; i <= n; i++)
 		{
 			for (int j = 0; j <= n; j++)
 			{
-				long v = (long)Math.pow(a,  j) * (long)Math.pow(b, i);
+				long v = (long)Math.pow(min,  j) * (long)Math.pow(max, i);
 			
-				setNum.add(v);
+				if (v > 1)
+					setNum.add(v);
 			}
 		}
 		
