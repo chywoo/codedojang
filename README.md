@@ -1,4 +1,1 @@
-codedojang
-==========
-
-코드 도장
+http://hackerrank.com 문제 풀이
