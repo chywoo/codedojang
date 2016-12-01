@@ -1,4 +1,4 @@
-package middle;
+package high;
 
 public class part1 {
 
