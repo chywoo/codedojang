@@ -236,7 +236,7 @@ public class juice {
     }
   
     public static void main(String[] argv) {
-        Main sol = new Main();
+        juice sol = new juice();
         sol.proc();
     }
 }
