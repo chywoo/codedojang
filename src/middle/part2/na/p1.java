@@ -1,4 +1,4 @@
-package middle.part2;
+package middle.part2.na;
 
 public class p1 {
 
