@@ -1,5 +1,6 @@
 package middle.part2.na;
 
+import util.Timer;
 import java.io.*;
 import java.util.*;
 
@@ -28,6 +29,8 @@ public class p4_maze {
 		
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
+			Timer.start();
+			
 			H = sc.nextInt();
 			W = sc.nextInt();
 			
@@ -49,7 +52,8 @@ exitloop:
 						break exitloop;
 					}
 			}
-			System.out.printf("#%d = %d\n", test_case, Answer);
+			
+			System.out.printf("#%d = %d, %fs\n", test_case, Answer, Timer.end());
 		}
 		
 		sc.close();
