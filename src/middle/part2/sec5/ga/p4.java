@@ -20,12 +20,14 @@ public class p4 {
 		Scanner sc = new Scanner(System.in);
 		
 		Answer = 0;
+		int sum;
 		
 		T = sc.nextInt();
 		
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
 			Answer = 0;
+			sum = 0;
 			Timer.start();
 			
 			N = sc.nextInt();
@@ -37,14 +39,18 @@ public class p4 {
 				data[i] = sc.nextInt();
 			}
 			
-			for ( int i = 0; i <= N - W; i++)
+			for ( int j = 0; j < W; j++)
 			{
-				int sum = 0;
-				
-				for ( int j = 0; j < W; j++)
-				{
-					sum += data[i + j];
-				}
+				sum += data[j];
+			}
+			
+			Answer = sum;
+			
+			
+			for ( int i = 1; i <= N - W; i++)
+			{
+				sum -= data[i - 1];
+				sum += data[W + i - 1];
 				
 				if ( sum > Answer ) Answer = sum;
 			}
