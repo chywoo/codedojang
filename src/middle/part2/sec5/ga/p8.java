@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// upperbound search
+// 리모컨으로 온도 조절하기
 public class p8 {
 
 	public static String input = "1\n" + 

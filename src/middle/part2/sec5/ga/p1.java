@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// upperbound search
+// 약수의 합
 public class p1 {
 
 	public static String input = "1 10";

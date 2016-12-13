@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// upperbound search
+// 삼각화단 만들기
 public class p3 {
 
 	public static String input = "5 3 9 10 1000 50000";

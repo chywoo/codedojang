@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// upperbound search
+// 고기잡이
 public class p4 {
 
 	public static String input = "1 6 3\n" + 

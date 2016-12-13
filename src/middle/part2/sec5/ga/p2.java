@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// upperbound search
+// �ִ밪
 public class p2 {
 
 	public static String input = "1 9 9\n" +
