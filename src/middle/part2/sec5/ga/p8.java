@@ -8,7 +8,7 @@ import java.util.*;
 public class p8 {
 
 	public static String input = "1\n" + 
-	"0 39";
+	"7 180";
 	static public int T;
 	static public int N, M, Answer;
 	static public int button[] = { 1, 5, 10 };
@@ -18,20 +18,21 @@ public class p8 {
 		System.setIn(is);
 		Scanner sc = new Scanner(System.in);
 		
-		int sum;
-		
 		T = sc.nextInt();
 		
 		for(int test_case = 1; test_case <= T; test_case++)
 		{
-			sum = 0;
-			Timer.start();
-			
 			N = sc.nextInt();
 			M = sc.nextInt();
+
+			Answer = Math.abs(M - N);
+			Timer.start();
+			Answer = solve_bfs(N);
+			System.out.printf("#%d: %d, %fs\n", test_case, Answer, Timer.end());
 			
 			Answer = Math.abs(M - N);
-			Answer = solve_bfs(N);
+			Timer.start();
+			Answer = solve_dfs(N, 0);
 			System.out.printf("#%d: %d, %fs\n", test_case, Answer, Timer.end());
 			
 //			Answer = solve_direct(N, M);
@@ -70,7 +71,9 @@ public class p8 {
 private static int solve_bfs(int start) {
 		int count = 0;
 		int temp, new_temp;
-		ArrayDeque<Integer> deque = new ArrayDeque<Integer>();
+		int[] value_obj = new int[2];
+		
+		ArrayDeque<int[]> deque = new ArrayDeque<int[]>();
 		
 		if ( Answer <= count )
 			return Answer;
@@ -80,14 +83,21 @@ private static int solve_bfs(int start) {
 			return count;
 		}
 
-		deque.add(start);
+		value_obj[0] = start;
+		value_obj[1] = 0;
+		
+		deque.add(value_obj);
 		
 		
 		while (!deque.isEmpty())
 		{
-			count++;
+			if (count >= Answer)
+				return Answer;
 			
-			temp  = deque.poll();
+			value_obj  = deque.poll();
+			temp = value_obj[0];
+			count = value_obj[1] + 1;
+			
 			for (int i=0; i<button.length; i++)
 			{
 				if (temp < M)
@@ -98,7 +108,14 @@ private static int solve_bfs(int start) {
 				if ( new_temp == M )
 					return count;
 				
-				else deque.add(new_temp);
+				else 
+				{
+					int new_value[] = new int[2];
+					new_value[0] = new_temp;
+					new_value[1] = count;
+					
+					deque.add(new_value);
+				}
 			}
 		}
 		
