@@ -11,7 +11,7 @@ public class p8 {
 	"7 180";
 	static public int T;
 	static public int N, M, Answer;
-	static public int button[] = { 1, 5, 10 };
+	static public int button[] = { 10, 5, 1 };
 	
 	public static void main(String[] args) {
 		InputStream is = new ByteArrayInputStream(input.getBytes());
@@ -124,13 +124,24 @@ private static int solve_bfs(int start) {
 
 	private static int solve_bfs2(int start) {
 		int temp, new_temp;
-		int level;
+		int level = 0;
 		int[] data = new int[2];
 		
 		ArrayDeque<int[]> deque = new ArrayDeque<int[]>();
 		
-		data[0] = start;
-		data[1] = 0;
+		
+		temp = start;
+		
+		while ( Math.abs( M - temp ) > button[0])
+		{
+			if ( M > temp ) temp += button[0];
+			else temp -= button[0];
+			
+			level++;
+		}
+		
+		data[0] = temp;
+		data[1] = level;
 		
 		deque.add(data);
 		
