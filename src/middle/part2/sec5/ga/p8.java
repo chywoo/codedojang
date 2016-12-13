@@ -27,7 +27,7 @@ public class p8 {
 
 			Answer = Math.abs(M - N);
 			Timer.start();
-			Answer = solve_bfs(N);
+			Answer = solve_bfs2(N);
 			System.out.printf("#%d: %d, %fs\n", test_case, Answer, Timer.end());
 			
 			Answer = Math.abs(M - N);
@@ -122,6 +122,48 @@ private static int solve_bfs(int start) {
 		return count;
 	}
 
+	private static int solve_bfs2(int start) {
+		int temp, new_temp;
+		int level;
+		int[] data = new int[2];
+		
+		ArrayDeque<int[]> deque = new ArrayDeque<int[]>();
+		
+		data[0] = start;
+		data[1] = 0;
+		
+		deque.add(data);
+		
+		
+		while (!deque.isEmpty())
+		{
+			data  = deque.poll();
+			temp = data[0];
+			level = data[1];
+			
+			if (temp == M )
+				return level;
+			
+			if (level >= Answer)
+				return Answer;
+			
+			for (int i=0; i<button.length; i++)
+			{
+				if (temp < M)
+					new_temp = temp + button[i];
+				else
+					new_temp = temp - button[i];
+				
+				int new_value[] = new int[2];
+				new_value[0] = new_temp;
+				new_value[1] = level + 1;
+				
+				deque.add(new_value);
+			}
+		}
+		
+		return Answer;
+	}
 
 	private static int solve_direct(int start, int target) {
 		int count = 0;
