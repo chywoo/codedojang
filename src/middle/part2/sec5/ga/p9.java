@@ -8,7 +8,7 @@ import java.util.*;
 public class p9 {
 
 	public static String input = "1\n" + 
-	"7";
+	"8";
 	static public int T;
 	static public int N, Answer;
 	static public ArrayList<Long> list = new ArrayList<Long>();
@@ -36,11 +36,31 @@ public class p9 {
 			Timer.start();
 			
 			make_prime(0, 1);
+
 			Answer = list.size();
-			
 
 			System.out.printf("#%d: %d, %fs\n", test_case, Answer, Timer.end());
 			Long data[] = (Long [])list.toArray(new Long[list.size()]);
+			
+			Arrays.sort(data);
+			for ( long i : data)
+			{
+				System.out.println(i);
+			}
+			
+			// Enhanced version
+			list.clear();
+			Timer.start();
+			
+			make_prime2(2, 1);
+			make_prime2(3, 1);
+			make_prime2(5, 1);
+			make_prime2(7, 1);
+
+			Answer = list.size();
+
+			System.out.printf("#%d: %d, %fs\n", test_case, Answer, Timer.end());
+			data = (Long [])list.toArray(new Long[list.size()]);
 			
 			Arrays.sort(data);
 			for ( long i : data)
@@ -73,12 +93,28 @@ public class p9 {
 		}
 	}
 
+	private static void make_prime2(long n, int depth) {
+		
+		if ( !isPrime(n) )
+			return;
+		
+		if ( depth == N )
+		{
+			list.add(n);
+		}
+		else
+		{
+			make_prime2( n * 10 + 1, depth + 1);
+			make_prime2( n * 10 + 3, depth + 1);
+			make_prime2( n * 10 + 7, depth + 1);
+			make_prime2( n * 10 + 9, depth + 1);
+		}
+	}
 
 	public static boolean isPrime(long n)
 	{
 		if ( n < 2 ) return false;
 			
-		// 소수가 구해지면 이를 저장했다가, 소수로 나누는 것이 더 효과적.
 		for (long i = 2; i * i <= n; i ++)
 		{
 			if ( n % i == 0 ) return false;
@@ -106,7 +142,7 @@ public class p9 {
 //		{
 //			boolean flag = true;
 //			
-//			for (long num = maxPrime; num <= n; num += 2)
+//			for (long num = maxPrime; num * num <= n; num += 2)
 //			{
 //				flag = true;
 //				
