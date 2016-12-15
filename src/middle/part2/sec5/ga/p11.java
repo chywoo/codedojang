@@ -9,8 +9,8 @@ public class p11 {
 
 	public static String input = "2\n" + 
 	"5 60 " +
-	"30 10 20 35 40 " +
-	"3 0 3 5 4 " +
+	"20 10 20 35 40 " +
+	"3 5 3 5 4 " +
 	"23 290 " +
 	"20 75 82 18 2 39 5 28 9 46 5 3 28 45 12 23 66 23 42 8 2 1 23 " +
 	"3 9 10 38 3 7 32 12 11 0 23 44 9 8 34 77 53 32 31 54 33 5 66";
@@ -90,11 +90,20 @@ public class p11 {
 			{
 				min_cost = sum_cost;
 				System.arraycopy(check, 0, dump, 0, check.length);
+				
+//				System.out.print("[DUMP] ");
+//				for(int i : dump)
+//				{
+//					if (i == 0) continue;
+//					
+//					System.out.printf("%d ", i);
+//				}
+//				System.out.println();
 			}
 		}
 		else
 		{
-			for (int i=0; i<N; i++)
+			for (int i=num; i<N; i++)
 			{
 				if (check[i] != 0) continue;
 				
