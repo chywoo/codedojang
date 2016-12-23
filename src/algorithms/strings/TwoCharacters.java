@@ -1,6 +1,7 @@
 package algorithms.strings;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class TwoCharacters {
@@ -16,18 +17,59 @@ public class TwoCharacters {
         Scanner in = new Scanner(is);
         int len = in.nextInt();
         String s = in.next();
-        HashSet<Character> set = new HashSet<>();
+        HashSet<Character> setOrigin = new HashSet<>();
+        Character[] letters;
+
 
         for(int i = 0; i < len; i++)
-            set.add(s.charAt(i));
+            setOrigin.add(s.charAt(i));
 
+        letters = setOrigin.toArray(new Character[len]);
+
+
+        len = setOrigin.size();
+
+        for(int i = 0; i < len -1; i++)
+        {
+            for(int j = i + 1; j < len; j++)
+            {
+                String data = s;
+
+                for( int k = 0; k < len; k++)
+                {
+                    char c;
+
+                    if ( k == j || k == i ) continue;
+
+                    c = letters[k];
+                    data = data.replace(c, ' ');
+                }
+
+                if (isValid(data))
+                    max = Math.max(max, data.length());
+            }
+        }
+
+        System.out.println("Answer: " + max);
     }
 
     private static boolean isValid(String str) {
         int len = str.length();
 
+        StringBuffer buffer = new StringBuffer();
+
+        for (int i = 0; i < len; i++)
+        {
+            if ( str.charAt(i) == ' ') continue;
+
+            buffer.append(str.charAt(i));
+        }
+
         if ( len < 3 )
             return true;
+
+        str = buffer.toString();
+        len = buffer.length();
 
         for ( int i = 0; i < len - 2; i++)
         {
