@@ -9,8 +9,9 @@ import java.util.regex.*;
  */
 public class day1 {
 
-    public static String input = "10\n" +
-            "beabeefeab";
+    public static String input = "12\n" +
+            "4.0\n" +
+            "is the best place to learn and practice coding!";
 
     public static void main(String args[])
     {
