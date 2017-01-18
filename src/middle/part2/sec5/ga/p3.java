@@ -11,7 +11,7 @@ import java.util.*;
  * <li> i + j + k = N</li>
  * <li> i + j > k</li>
  * <li> i <= N / 3 and j <= N / 3 and k <= N / 3</li>
- * <li> i >= j >= k로 정의해서 loop</li>
+ * <li> i >= j >= k로 정의해서 loop. 이 조건에서 i는 최대 N/3까지, j는 최대 N/2까지의 값을 가진다.</li>
  */
 public class p3 {
 
