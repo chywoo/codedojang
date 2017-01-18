@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// ¿À¸ñ
+// ì˜¤ëª©
 public class p6 {
 
 	public static String input = "1\n" + 

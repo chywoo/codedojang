@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// �ִܰŸ� ã��
+// 최단거리 찾기
 public class p7 {
 
 	public static String input = "1\n" + 

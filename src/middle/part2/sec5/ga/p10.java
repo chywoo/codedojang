@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// ÃÖ¼Ò ÇÕ ±¸ÇÏ±â
+// ìµœì†Œ í•© êµ¬í•˜ê¸°
 public class p10 {
 
 	public static String input = "2\n" + 

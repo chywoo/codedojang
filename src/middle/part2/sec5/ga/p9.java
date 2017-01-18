@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// ¿À¸¥Æí Àı´Ü °¡´É ¼Ò¼ö
+// ì˜¤ë¥¸í¸ ì ˆë‹¨ ê°€ëŠ¥ ì†Œìˆ˜
 public class p9 {
 
 	public static String input = "1\n" + 
@@ -124,21 +124,21 @@ public class p9 {
 	}
 	
 	
-	// ¸ÁÇÔ ¤Ğ.¤Ğ.. Å« ¼ö°¡ µé¾î¿Ã °æ¿ì, ±× ¼ö±îÁö ¸ğµç ¼Ò¼ö¸¦ Ã£´À¶ó ½Ã°£ ´Ù ±î¸ÔÀ½.
+	// ë§í•¨ ã… .ã… .. í° ìˆ˜ê°€ ë“¤ì–´ì˜¬ ê²½ìš°, ê·¸ ìˆ˜ê¹Œì§€ ëª¨ë“  ì†Œìˆ˜ë¥¼ ì°¾ëŠë¼ ì‹œê°„ ë‹¤ ê¹Œë¨¹ìŒ.
 //	public static boolean isPrime_enhanced(long n)
 //	{
 //		if ( n == 2 ) return true;
 //		if ( n == 1 || n % 2 == 0 ) return false;
 //		
-//		// ±âÁ¸ ¼Ò¼ö set¿¡ Æ÷ÇÔµÇ¾î ÀÖ´Ù¸é true.
+//		// ê¸°ì¡´ ì†Œìˆ˜ setì— í¬í•¨ë˜ì–´ ìˆë‹¤ë©´ true.
 //		if (primes.contains(n))
 //			return true;
 //		
-//		// ±âÁ¸ ¼Ò¼ö set¿¡ ¾ø´Âµ¥, ¼Ò¼ö setÀÇ ÃÖ´ë ¼Ò¼öº¸´Ù nÀÌ ÀÛÀ¸¸é ¼Ò¼ö°¡ ¾Æ´Ô
+//		// ê¸°ì¡´ ì†Œìˆ˜ setì— ì—†ëŠ”ë°, ì†Œìˆ˜ setì˜ ìµœëŒ€ ì†Œìˆ˜ë³´ë‹¤ nì´ ì‘ìœ¼ë©´ ì†Œìˆ˜ê°€ ì•„ë‹˜
 //		if ( n < maxPrime)
 //			return false;
 //		
-//		if ( n > maxPrime) // ´©¶ôµÈ ¼Ò¼ö¸¦ Ãß°¡
+//		if ( n > maxPrime) // ëˆ„ë½ëœ ì†Œìˆ˜ë¥¼ ì¶”ê°€
 //		{
 //			boolean flag = true;
 //			

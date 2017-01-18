@@ -4,7 +4,7 @@ import util.Timer;
 import java.io.*;
 import java.util.*;
 
-// �ִ밪
+// 최대값
 public class p2 {
 
 	public static String input = "1 9 9\n" +
