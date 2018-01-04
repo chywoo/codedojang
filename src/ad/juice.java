@@ -14,7 +14,7 @@ public class juice {
     static public int maxCount;
 
     public static void main(String[] args) throws Exception {
-        FileInputStream fis = new FileInputStream("data/juice.dat");
+        FileInputStream fis = new FileInputStream("data/examples.juice.dat");
         System.setIn(fis);
         Scanner sc = new Scanner(System.in);
 
