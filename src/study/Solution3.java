@@ -55,7 +55,7 @@ public class Solution3 {
 			for (i=0; i < cnt; i++) {
 				System.out.printf("%d ", ans[i]);
 			}
-			System.out.println("");
+			System.out.println();
 		}
 	}
 }
